@@ -1,0 +1,3 @@
+ctrl + alt + T打开Terminator
+sudo apt-get install terminator 
+新安装的这个就可以分屏了
