@@ -7,7 +7,7 @@ sudo mkdir /usr/share/fonts/winFonts
 
 
 2.然后将字体文件拷贝到此文件夹下：
-sudo cp ~/Desktop/font/*.ttf /usr/share/fonts/winFonts/
+sudo cp *.ttf /usr/share/fonts/winFonts/
 
 
 3.然后，改变权限：
