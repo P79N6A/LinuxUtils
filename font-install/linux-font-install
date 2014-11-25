@@ -3,7 +3,7 @@ reference：http://my.oschina.net/itblog/blog/278566
 在linux中安装字体，现在网上下载字体文件，比如：consola.ttf。然后：
 
 1：在/usr/share/fonts/下新建文件夹 如：winFonts目录：
-sudo mkdir /usr/share/fonts/winFonts
+sudo mkdir -p /usr/share/fonts/winFonts
 
 
 2.然后将字体文件拷贝到此文件夹下：
