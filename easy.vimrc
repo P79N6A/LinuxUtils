@@ -1,6 +1,6 @@
 
- 
-set syntax=on    " 语法高亮
+" syntax on has been tested in mac OX 
+syntax on    " 语法高亮
 
 " 自动缩进
 set autoindent
