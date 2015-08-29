@@ -1,19 +1,59 @@
+"--------------------bundle, Vim plugins manager--------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" syntax on has been tested in mac OX 
-syntax on    " Óï·¨¸ßÁÁ
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" ×Ô¶¯Ëõ½ø
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'Yggdroot/indentLine'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"----------------all above added to use bundle---------------------------
+
+
+syntax on               " è¯­æ³•é«˜äº®
+
 set autoindent
+set expandtab           "è®¾ç½®ç”¨ç©ºæ ¼ä»£æ›¿Tab, é‚£ä¹ˆtabstopå°±æ²¡ç”¨äº†ï¼Œsofttabstopå†³å®štabsç©ºæ ¼æ•°
+set tabstop=2           "Tabé”®çš„å®½åº¦
+set softtabstop=4       "Tabé”®çš„å®½åº¦
+set shiftwidth=4        "é»˜è®¤vimçš„ç¼©è¿›å®½åº¦ä¸º8ä¸ªç©ºæ ¼ï¼Œä¿®æ”¹ç¼©è¿›çš„å®½åº¦ä¸º4ä¸ªç©ºæ ¼
+
+set number              "æ˜¾ç¤ºè¡Œå·
+set backspace=indent,eol,start "åœ¨insertæ¨¡å¼ä¸‹ï¼Œå¯ç”¨backspace
 
 
-" Tab¼üµÄ¿í¶È
-set tabstop=4
+"--------------indent lineç›¸å…³---------------------------------------------
+"indentLine é¢œè‰²è®¾ç½®
+let g:indentLine_color_term = 239    "terminal ä¸­çš„é¢œè‰²
+let g:indentLine_color_tty_light = 7 "(default: 4)
+let g:indentLine_color_dark = 1      "(default: 2)
 
-" ÏÔÊ¾ĞĞºÅ
-set number
+let g:indentLine_enabled = 1 "é»˜è®¤å¼€å¯indentLine
+let g:indentLine_char = '|'  "å¡«å……å­—ç¬¦
+"-------------------------------------------------------------------------
 
-"±àÂëÉèÖÃ
-set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 
-set nocompatible  "È¥µôÌÖÑáµÄÓĞ¹ØviÒ»ÖÂĞÔÄ£Ê½£¬±ÜÃâÒÔÇ°°æ±¾µÄÒ»Ğ©bugºÍ¾ÖÏŞ 
+
+
+
 
