@@ -34,14 +34,16 @@ syntax on               " 语法高亮
 
 set autoindent
 set expandtab           "设置用空格代替Tab, 那么tabstop就没用了，softtabstop决定tabs空格数
-set tabstop=2           "Tab键的宽度
+set tabstop=4           "Tab键的宽度
 set softtabstop=4       "Tab键的宽度
 set shiftwidth=4        "默认vim的缩进宽度为8个空格，修改缩进的宽度为4个空格
+
+autocmd Filetype ruby set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 
 set number              "显示行号
 set backspace=indent,eol,start "在insert模式下，启用backspace
 
-
+set hlsearch            "搜索高亮显示，:/word的搜索
 "--------------indent line相关---------------------------------------------
 "indentLine 颜色设置
 let g:indentLine_color_term = 239    "terminal 中的颜色
@@ -49,7 +51,7 @@ let g:indentLine_color_tty_light = 7 "(default: 4)
 let g:indentLine_color_dark = 1      "(default: 2)
 
 let g:indentLine_enabled = 1 "默认开启indentLine
-let g:indentLine_char = '|'  "填充字符
+let g:indentLine_char = '¦'  "填充字符
 "-------------------------------------------------------------------------
 
 
