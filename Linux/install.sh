@@ -3,6 +3,8 @@ install_cmd="" # package manager
 
 if [[ $(grep Ubuntu /etc/issue) != "" ]]; then
     install_cmd="apt-get"
+elif [[ $(grep CentOS /etc/issue) != "" ]]; then
+    install_cmd="yum"
 else
     echo 'Error! Unrecognized OS.'
     exit 1
