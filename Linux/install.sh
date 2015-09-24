@@ -14,12 +14,12 @@ fi
 cp vimrc ~/.vimrc
 
 # install bashrc
-cp bashrc ~/.bashrc
-echo source ~/.bashrc >> ~/.bash_profile
-source ~/.bashrc
+#cp bashrc ~/.bashrc
+#echo source ~/.bashrc >> ~/.bash_profile
+#source ~/.bashrc
 
+#install gitconfig
 cp gitconfig ~/.gitconfig
-
 
 #install Vundle
 if [ -e ~/.vim/bundle/Vundle.vim ]; then
@@ -27,6 +27,8 @@ if [ -e ~/.vim/bundle/Vundle.vim ]; then
 else
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+
+vim +PluginInstall +qall
 
 # install YouCompleteMe 
 cd ~/.vim/bundle/YouCompleteMe
