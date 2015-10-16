@@ -1,0 +1,39 @@
+环境为centos 6
+
+1，首先把tomcat解压，根目录重命名为tomcat7，并放到/usr/share/下面
+
+2，将下面这段代码粘贴到/etc/init.d/tomcat7里面
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:        tomcat7
+# Required-Start:  $network
+# Required-Stop:   $network
+# Default-Start:   2 3 4 5
+# Default-Stop:    0 1 6
+# Short-Description: Start/Stop Tomcat server
+### END INIT INFO
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+start() {
+ sh /usr/share/tomcat7/bin/startup.sh
+}
+
+stop() {
+ sh /usr/share/tomcat7/bin/shutdown.sh
+}
+
+case $1 in
+  start|stop) $1;;
+  restart) stop; start;;
+  *) echo "Run as $0 <start|stop|restart>"; exit 1;;
+esac
+
+3，chmod 755 /etc/init.d/tomcat7
+
+4，chkconfig --add tomcat
+
+手动启动tomcat：service tomcat7 start
+手动停止tomcat: service tomcat7 stop
+
