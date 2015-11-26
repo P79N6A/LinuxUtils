@@ -14,7 +14,17 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'https://github.com/davidhalter/jedi-vim.git'
 Plugin 'Yggdroot/indentLine'
+
+" ruby related
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-projectionist'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'scrooloose/nerdtree'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -58,7 +68,12 @@ let g:indentLine_char = '¦'  "填充字符
 "-------------------------------------------------------------------------
 
 
-
-
+" Ctrl-n 用来触发nerdtree
+map <C-n> :NERDTreeToggle<CR>
+"vim 面板切换
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 
