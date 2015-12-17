@@ -72,7 +72,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " show a visual line under the cursor's current line
-set cursorline
+" set cursorline
 " show the matching part of the pair for [] {} and ()
 set showmatch
 " enable all Python syntax highlighting features
