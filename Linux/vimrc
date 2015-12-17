@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/davidhalter/jedi-vim.git'
 Plugin 'Yggdroot/indentLine'
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
 
 " ruby related
 Plugin 'tpope/vim-rails'
@@ -70,10 +71,22 @@ let g:indentLine_char = '¦'  "填充字符
 
 " Ctrl-n 用来触发nerdtree
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <Tab> gt
+let g:ctrlp_map = '<c-p>'
+
+"common setting for vim
 "vim 面板切换
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+nnoremap <leader>y "*y
+nnoremap <leader>p "*p
+
+
+
+" 各种命令
+" :vertical resize -5 纵向缩小当前window, 5个character的度量
+" :resize +5 默认横向扩大window
 
