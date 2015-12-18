@@ -14,12 +14,15 @@ Plugin 'https://github.com/VundleVim/Vundle.vim.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
 
+" 安装完还需要进入到Youcompleteme的目录编译lib文件，参考https://github.com/Valloric/YouCompleteMe
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/Yggdroot/indentLine.git'
 
 " python autocomp
-Plugin 'https://github.com/davidhalter/jedi-vim.git'
+" Plugin 'https://github.com/davidhalter/jedi-vim.git' "这个貌似已经被YouCompleteMe包含了
 
+" ruby
+Plugin 'https://github.com/vim-ruby/vim-ruby.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -61,26 +64,43 @@ let g:indentLine_char = '¦'  "填充字符
 
 " Ctrl-n 用来触发nerdtree
 map <C-n> :NERDTreeToggle<CR>
+
+" 多Tab页的切换
 nnoremap <Tab> gt
+
+" Ctrl+p呼出CtrlP文件名查找
 let g:ctrlp_map = '<c-p>'
 
-"common setting for vim
 "vim 面板切换
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" show a visual line under the cursor's current line
-" set cursorline
 " show the matching part of the pair for [] {} and ()
 set showmatch
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
+
+" vimgrep多文件匹配查找命令，非常强大。 ./**/*中的.是当前工作目录的意思，不是打开的这个文件的位置
+map <F3> :execute "vimgrep /" . expand("<cword>") . "/gj ./**/*" <Bar> cw<CR>
+
+
+
 
 
 
 " 各种命令
 " :vertical resize -5 纵向缩小当前window, 5个character的度量
 " :resize +5 默认横向扩大window
+
+
+
+
+
+" Ruby IDE
+" 1, use ripper-tags (gem install it first), to generate tags file
+" 2, Ctrl+] go to definition of method, class, ...
+" 3, Ctrl+o backword
+
 
