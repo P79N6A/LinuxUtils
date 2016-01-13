@@ -18,11 +18,19 @@ Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/Yggdroot/indentLine.git'
 
+Plugin 'https://github.com/itchyny/lightline.vim' 
 " python autocomp
 " Plugin 'https://github.com/davidhalter/jedi-vim.git' "这个貌似已经被YouCompleteMe包含了
 
 " ruby
 Plugin 'https://github.com/vim-ruby/vim-ruby.git'
+
+" web development
+Plugin 'https://github.com/easymotion/vim-easymotion.git'
+"Plugin 'https://github.com/Shutnik/jshint2.vim'  " js hint
+"Plugin 'https://github.com/skammer/vim-css-color' " css color
+
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -36,6 +44,7 @@ filetype plugin indent on    " required
 
 
 syntax on               " 语法高亮
+set noswapfile
 
 set autoindent
 set expandtab           "设置用空格代替Tab, 那么tabstop就没用了，softtabstop决定tabs空格数
@@ -77,30 +86,22 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" show the matching part of the pair for [] {} and ()
-set showmatch
-" enable all Python syntax highlighting features
-let python_highlight_all = 1
 
 " vimgrep多文件匹配查找命令，非常强大。 ./**/*中的.是当前工作目录的意思，不是打开的这个文件的位置
 map <F3> :execute "vimgrep /" . expand("<cword>") . "/gj ./**/*" <Bar> cw<CR>
 
 
-
-
+" 生成ctags文件
+map <F12> :!ctags -R .<cr>
+" Ruby IDE
+" 1, use ripper-tags (gem install it first), to generate tags file
+" 2, Ctrl+] go to definition of method, class, ...
+" 3, Ctrl+o backword
 
 
 " 各种命令
 " :vertical resize -5 纵向缩小当前window, 5个character的度量
 " :resize +5 默认横向扩大window
 
-
-
-
-
-" Ruby IDE
-" 1, use ripper-tags (gem install it first), to generate tags file
-" 2, Ctrl+] go to definition of method, class, ...
-" 3, Ctrl+o backword
 
 
