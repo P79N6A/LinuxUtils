@@ -13,11 +13,6 @@ fi
 # install .vimrc
 cp vimrc ~/.vimrc
 
-# install bashrc
-#cp bashrc ~/.bashrc
-#echo source ~/.bashrc >> ~/.bash_profile
-#source ~/.bashrc
-
 #install gitconfig
 cp gitconfig ~/.gitconfig
 
@@ -37,7 +32,7 @@ sudo $install_cmd install cmake
 # --gocode-completer  Go language
 # --tern-completer  JavaScript (need nodejs & npm installed)
 # --omnisharp-completer  C#
-sudo ./install.sh --clang-completer --system-libclang --system-boost --gocode-completer --tern-completer
+sudo ./install.sh # --clang-completer --system-libclang --system-boost --gocode-completer --tern-completer
 cd $dir
 
 
