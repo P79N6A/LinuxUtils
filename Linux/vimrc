@@ -13,24 +13,18 @@ Plugin 'https://github.com/VundleVim/Vundle.vim.git'
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
-
+Plugin 'https://github.com/easymotion/vim-easymotion.git'
 " 安装完还需要进入到Youcompleteme的目录编译lib文件，参考https://github.com/Valloric/YouCompleteMe
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/Yggdroot/indentLine.git'
-
-Plugin 'https://github.com/itchyny/lightline.vim' 
-" python autocomp
-" Plugin 'https://github.com/davidhalter/jedi-vim.git' "这个貌似已经被YouCompleteMe包含了
+Plugin 'https://github.com/vim-airline/vim-airline.git'
 
 " ruby
 Plugin 'https://github.com/vim-ruby/vim-ruby.git'
 
 " web development
-Plugin 'https://github.com/easymotion/vim-easymotion.git'
 "Plugin 'https://github.com/Shutnik/jshint2.vim'  " js hint
 "Plugin 'https://github.com/skammer/vim-css-color' " css color
-
-
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -86,6 +80,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Always show the status line !!!!
+set laststatus=2
 
 " vimgrep多文件匹配查找命令，非常强大。 ./**/*中的.是当前工作目录的意思，不是打开的这个文件的位置
 map <F3> :execute "vimgrep /" . expand("<cword>") . "/gj ./**/*" <Bar> cw<CR>
@@ -98,6 +94,13 @@ map <F12> :!ctags -R .<cr>
 " 2, Ctrl+] go to definition of method, class, ...
 " 3, Ctrl+o backword
 
+" easy motion cfg
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
+
+let g:nerdtree_tabs_open_on_console_startup=1
+
+"let g:airline#extensions#tabline#enabled = 1
 
 " 各种命令
 " :vertical resize -5 纵向缩小当前window, 5个character的度量

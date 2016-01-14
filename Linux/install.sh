@@ -33,7 +33,11 @@ vim +PluginInstall +qall
 # install YouCompleteMe 
 cd ~/.vim/bundle/YouCompleteMe
 sudo $install_cmd install cmake
-sudo ./install.sh
+# --clang-completer  C/C++
+# --gocode-completer  Go language
+# --tern-completer  JavaScript (need nodejs & npm installed)
+# --omnisharp-completer  C#
+sudo ./install.sh --clang-completer --system-libclang --system-boost --gocode-completer --tern-completer
 cd $dir
 
 
