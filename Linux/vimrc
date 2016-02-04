@@ -20,10 +20,12 @@ Plugin 'https://github.com/Yggdroot/indentLine.git'
 Plugin 'https://github.com/vim-airline/vim-airline.git'
 " html
 Plugin 'https://github.com/mattn/emmet-vim.git'
+Plugin 'https://github.com/gregsexton/MatchTag.git'
 " ruby
 Plugin 'https://github.com/vim-ruby/vim-ruby.git'
 
 Plugin 'https://github.com/majutsushi/tagbar.git'
+Plugin 'https://github.com/vim-scripts/taglist.vim.git'
 
 " web development
 "Plugin 'https://github.com/Shutnik/jshint2.vim'  " js hint
@@ -49,6 +51,9 @@ set expandtab           "设置用空格代替Tab, 那么tabstop就没用了，s
 set tabstop=4           "Tab键的宽度
 set softtabstop=4       "Tab键的宽度
 set shiftwidth=4        "默认vim的缩进宽度为8个空格，修改缩进的宽度为4个空格
+
+" associate *.foo with php filetype
+au BufRead,BufNewFile *.jst setfiletype html
 
 autocmd Filetype ruby set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 autocmd Filetype groovy set tabstop=2 | set softtabstop=2 | set shiftwidth=2
@@ -105,13 +110,14 @@ nmap t <Plug>(easymotion-t2)
 
 nmap <F8> :TagbarToggle<CR>
 
+" nerdtree忽略的文件过滤器
+let NERDTreeIgnore = ['\.pyc$']
 let g:nerdtree_tabs_open_on_console_startup=1
 
+"tab栏
 "let g:airline#extensions#tabline#enabled = 1
 
 " 各种命令
 " :vertical resize -5 纵向缩小当前window, 5个character的度量
 " :resize +5 默认横向扩大window
-
-" 手动安装
-" npm install -g git+https://github.com/ramitos/jsctags.git " 用于生成js文件的ctags
+" normal 模式下，{i}gt, 转到第i个tab页，base1.
