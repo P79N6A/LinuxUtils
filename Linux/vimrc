@@ -27,6 +27,9 @@ Plugin 'https://github.com/vim-ruby/vim-ruby.git'
 Plugin 'https://github.com/majutsushi/tagbar.git'
 Plugin 'https://github.com/vim-scripts/taglist.vim.git'
 
+" Python PEP8 syntax checker, Press <F7> to run flake8 on current file. 
+Plugin 'https://github.com/nvie/vim-flake8.git' 
+
 " web development
 "Plugin 'https://github.com/Shutnik/jshint2.vim'  " js hint
 "Plugin 'https://github.com/skammer/vim-css-color' " css color
@@ -73,7 +76,9 @@ let g:indentLine_color_dark = 1      "(default: 2)
 let g:indentLine_enabled = 1 "默认开启indentLine
 let g:indentLine_char = '¦'  "填充字符
 "-------------------------------------------------------------------------
-
+"
+"auto trigger Pep8 syntax checker while wirting python file.
+autocmd BufWritePost *.py call Flake8()
 
 " Ctrl-n 用来触发nerdtree
 map <C-n> :NERDTreeToggle<CR>
