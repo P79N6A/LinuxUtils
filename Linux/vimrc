@@ -12,23 +12,36 @@ call vundle#begin()
 Plugin 'https://github.com/VundleVim/Vundle.vim.git'
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
+
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plugin 'https://github.com/easymotion/vim-easymotion.git'
-" 安装完还需要进入到Youcompleteme的目录编译lib文件，参考https://github.com/Valloric/YouCompleteMe
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
-Plugin 'https://github.com/Yggdroot/indentLine.git'
-Plugin 'https://github.com/vim-airline/vim-airline.git'
-" html
-Plugin 'https://github.com/mattn/emmet-vim.git'
-Plugin 'https://github.com/gregsexton/MatchTag.git'
-" ruby
-Plugin 'https://github.com/vim-ruby/vim-ruby.git'
+Plugin 'https://github.com/vim-scripts/mru.vim.git'
 
 Plugin 'https://github.com/majutsushi/tagbar.git'
 Plugin 'https://github.com/vim-scripts/taglist.vim.git'
 
+Plugin 'https://github.com/easymotion/vim-easymotion.git'
+" 安装完还需要进入到Youcompleteme的目录编译lib文件，参考https://github.com/Valloric/YouCompleteMe
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'https://github.com/Yggdroot/indentLine.git'
+
+Plugin 'https://github.com/tpope/vim-fugitive.git'
+Plugin 'https://github.com/vim-airline/vim-airline.git'
+Plugin 'https://github.com/vim-airline/vim-airline-themes.git'
+
+" html
+Plugin 'https://github.com/mattn/emmet-vim.git'
+Plugin 'https://github.com/gregsexton/MatchTag.git'
+
+" ruby
+Plugin 'https://github.com/vim-ruby/vim-ruby.git'
+Plugin 'https://github.com/tpope/vim-rails.git'
+
+" git plugin
+Plugin 'https://github.com/airblade/vim-gitgutter.git'
+
 " Python PEP8 syntax checker, Press <F7> to run flake8 on current file. 
 Plugin 'https://github.com/nvie/vim-flake8.git' 
+Plugin 'https://github.com/davidhalter/jedi-vim.git'
 
 " web development
 "Plugin 'https://github.com/Shutnik/jshint2.vim'  " js hint
@@ -84,12 +97,13 @@ autocmd BufWritePost *.py call Flake8()
 map <C-n> :NERDTreeToggle<CR>
 
 " 多Tab页的切换
+" 3gt = go to third tab
 nnoremap <Tab> gt
 
-" Ctrl+p呼出CtrlP文件名查找
-let g:ctrlp_map = '<c-p>'
+" CtrlP setting
+let g:ctrlp_map = '<c-p>' " ctrl+f switch to buffer/mru mode
 
-"vim 面板切换
+"vim pane switch, useful in tmux mode
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -102,22 +116,35 @@ set laststatus=2
 map <F3> :execute "vimgrep /" . expand("<cword>") . "/gj ./**/*" <Bar> cw<CR>
 " vimgrep /RegEx/gj ./**/*
 
-" 生成ctags文件
+" 生成C tags文件
 map <F12> :!ctags -R .<cr>
-" Ruby IDE
-" 1, use ripper-tags (gem install it first), to generate tags file
+" 生成Ruby tags文件
+" 1, use 'ripper-tags' (gem install it first), to generate tags file
 " 2, Ctrl+] go to definition of method, class, ...
 " 3, Ctrl+o backword
 
 " easy motion cfg
 nmap s <Plug>(easymotion-s2)
-nmap t <Plug>(easymotion-t2)
 
 nmap <F8> :TagbarToggle<CR>
 
 " nerdtree忽略的文件过滤器
 let NERDTreeIgnore = ['\.pyc$']
 let g:nerdtree_tabs_open_on_console_startup=1
+
+" airline
+let g:airline_theme = 'powerlineish'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+
+" MRU setting
+let MRU_Max_Entries = 400
+map <leader>f :MRU<CR>
 
 "tab栏
 "let g:airline#extensions#tabline#enabled = 1
