@@ -19,6 +19,8 @@ Plugin 'https://github.com/vim-scripts/mru.vim.git'
 Plugin 'https://github.com/majutsushi/tagbar.git'
 Plugin 'https://github.com/vim-scripts/taglist.vim.git'
 
+Plugin 'https://github.com/scrooloose/syntastic.git'
+
 Plugin 'https://github.com/easymotion/vim-easymotion.git'
 " 安装完还需要进入到Youcompleteme的目录编译lib文件，参考https://github.com/Valloric/YouCompleteMe
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
@@ -53,6 +55,7 @@ filetype plugin indent on    " required
 " Brief help
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PluginUpdate     - update all plugins
 "
 " Put your non-Plugin stuff after this line
 "----------------all above added to use bundle---------------------------
@@ -141,6 +144,15 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
+
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " MRU setting
 let MRU_Max_Entries = 400
