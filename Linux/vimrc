@@ -42,7 +42,8 @@ Plugin 'https://github.com/tpope/vim-rails.git'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
 
 " Python PEP8 syntax checker, Press <F7> to run flake8 on current file. 
-Plugin 'https://github.com/nvie/vim-flake8.git' 
+" Plugin 'https://github.com/nvie/vim-flake8.git'  already included in
+" syntastic 
 Plugin 'https://github.com/davidhalter/jedi-vim.git'
 
 " web development
