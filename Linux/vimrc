@@ -95,7 +95,7 @@ let g:indentLine_char = '¦'  "填充字符
 "-------------------------------------------------------------------------
 "
 "auto trigger Pep8 syntax checker while wirting python file.
-autocmd BufWritePost *.py call Flake8()
+"autocmd BufWritePost *.py call Flake8()
 
 " Ctrl-n 用来触发nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -139,7 +139,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 " airline
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#syntastic#enabled = 1
@@ -154,6 +154,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501,E225'
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['java'] }
 
@@ -161,8 +163,20 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let MRU_Max_Entries = 400
 map <leader>f :MRU<CR>
 
-"tab栏
-"let g:airline#extensions#tabline#enabled = 1
+function! GotoJump()
+  jumps
+  let j = input("Please select your jump: ")
+  if j != ''
+    let pattern = '\v\c^\+'
+    if j =~ pattern
+      let j = substitute(j, pattern, '', 'g')
+      execute "normal " . j . "\<c-i>"
+    else
+      execute "normal " . j . "\<c-o>"
+    endif
+  endif
+endfunction
+nmap <Leader>j :call GotoJump()<CR>
 
 " 各种命令
 " :vertical resize -5 纵向缩小当前window, 5个character的度量
