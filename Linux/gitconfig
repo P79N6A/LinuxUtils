@@ -47,3 +47,5 @@
     rh = reset --hard
 
 	ecco = !/Users/junqiao.wang/ecco-git/ecco-hooks
+[push]
+	default = simple

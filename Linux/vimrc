@@ -38,6 +38,9 @@ Plugin 'https://github.com/gregsexton/MatchTag.git'
 Plugin 'https://github.com/vim-ruby/vim-ruby.git'
 Plugin 'https://github.com/tpope/vim-rails.git'
 
+" scala
+Plugin 'https://github.com/derekwyatt/vim-scala.git'
+
 " git plugin
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
 
@@ -63,6 +66,8 @@ filetype plugin indent on    " required
 
 
 syntax on               " 语法高亮
+"colorscheme molokai
+
 set noswapfile
 
 set autoindent
@@ -132,6 +137,8 @@ nmap s <Plug>(easymotion-s2)
 
 nmap <F8> :TagbarToggle<CR>
 
+nmap <F10> :!ruby %<CR>
+
 " nerdtree忽略的文件过滤器
 let NERDTreeIgnore = ['\.pyc$']
 let g:nerdtree_tabs_open_on_console_startup=1
@@ -158,6 +165,9 @@ let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E225'
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['java'] }
+
+" YCM max file size 20 mb
+let g:ycm_disable_for_files_larger_than_kb = 20000
 
 " MRU setting
 let MRU_Max_Entries = 400
