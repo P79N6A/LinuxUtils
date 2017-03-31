@@ -1,0 +1,12 @@
+user_a@machine_a want to login to machine_b use username user_b:
+
+step1:
+user_a@machine_a:~$ ssh-keygen
+
+step2:
+user_a@machine_a:~$ cat ~/.ssh/rsa_id.pub          => output XX
+user_b@machine_b:~$ cat XX >> ~/.ssh/authorized_keys
+
+step3:
+user_a@machine_a:~$ ssh -o StrictHostKeyChecking=no user_b@machine_b
+user_a@machine_a:~$ ssh -o StrictHostKeyChecking=no user_b@machine_b 'ls'             => run ls and return
