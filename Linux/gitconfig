@@ -43,6 +43,7 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     lgg =  log --graph --decorate --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
     loa = log --graph --decorate --abbrev-commit --all
+    lll = log --pretty=format:\"%H %an, %ar : %s\"
     ls = ls-files
     rh = reset --hard
 
