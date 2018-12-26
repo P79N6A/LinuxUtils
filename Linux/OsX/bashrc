@@ -1,6 +1,36 @@
 alias ls='ls -G'
 alias sublime="open -a 'Sublime Text 2.app'"
 alias ll='ls -alh'
+alias go-test76="ssh junqiao.wjq@10.125.0.76"
+alias go-test85="ssh 10.101.225.85"
+alias go-tiao-test="ssh junqiao.wjq@login1.et2sqa.tbsite.net"
+alias go-tiao-prod="ssh junqiao.wjq@login1.eu13.alibaba.org"
+alias go-tiao-prod-aliyun="ssh junqiao.wjq@login1.eu13.cloud.alibaba.org"
+alias go-dev79="ssh junqiao.wjq@10.101.172.79"
+alias go-dev38="ssh junqiao.wjq@11.238.146.38"
+alias go-dev39="ssh junqiao.wjq@11.238.146.39"
+alias go-dev199="ssh junqiao.wjq@11.238.144.199"
+alias go-ecs="ssh root@121.196.217.86"
+alias go-meiyin1="ssh root@121.43.186.55"
+alias go-meiyin2="ssh root@120.55.44.127"
+alias go-green="ssh root@121.196.193.17"
+alias go-ebook="ssh root@47.94.15.173"
+alias go-hpc="ssh tester@106.14.135.108"   # NAS-12345
+alias go-qingdao1="ssh root@47.104.75.182"
+alias go-qingdaoH="ssh root@47.104.128.234"
+alias go-centos73="ssh root@47.97.90.19"
+alias go-centos69="ssh root@47.97.195.154"
+alias go-kernel="ssh root@47.97.90.48"
+alias go-chenge="ssh root@39.104.61.232"
+alias go-shenzhen-ag="ssh root@47.106.15.104"
+alias go-image="ssh root@47.92.100.35"
+
+
+alias build-migration="mvn clean package && cp target/maven-demo-0.1.1.jar ./nasimport-v0.1.jar"
+alias jetty-restart-yaochi="cur=`pwd` && cd ~/workspace/enas-yaochi && mvn clean package -DskipTests && cp target/nas-bundle-war-3.0.0.war ~/Downloads/jetty-distribution-9.2.22.v20170606/webapps/ && sh /Users/junqiao.wjq/Downloads/jetty-distribution-9.2.22.v20170606/bin/jetty.sh restart; cd $cur"
+alias jetty-restart-console="cur=`pwd` && cd ~/workspace/nas-console-aliyun-com && mvn clean package -DskipTests && cp target/ofs-console-backend-1.0.0.war ~/Downloads/jetty-distribution-9.2.22.v20170606/webapps/ && sh /Users/junqiao.wjq/Downloads/jetty-distribution-9.2.22.v20170606/bin/jetty.sh restart; cd $cur"
+alias jetty-stop="sh /Users/junqiao.wjq/Downloads/jetty-distribution-9.2.22.v20170606/bin/jetty.sh stop"
+alias jetty-restart="sh /Users/junqiao.wjq/Downloads/jetty-distribution-9.2.22.v20170606/bin/jetty.sh restart"
 
 if \[ \-f /usr/local/git/contrib/completion/git-completion.bash \]; then
 . /usr/local/git/contrib/completion/git-completion.bash
@@ -9,14 +39,19 @@ fi
  
 PS1='\[\e[0;35m\]\u:\[\e[1;36m\]\w\[\e[m\]$(git status 2>/dev/null|grep "nothing to commit" &>/dev/null;if [ "$?" -eq "0" ];then __git_ps1 " (\[\e[1;97m\]%s\[\e[m\])";else __git_ps1 " (\[\e[1;33m\]%s\[\e[m\])";fi)$ '
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
 
-export PATH="$PATH:/usr/share/arcanist/arcanist/bin"
-
-source /usr/local/bin/virtualenvwrapper.sh
+#if [ -f `brew --prefix`/etc/bash_completion ]; then
+#    . `brew --prefix`/etc/bash_completion
+#fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/bin
 PATH=$PATH:/Users/junqiao.wang/bin
+PATH=$PATH:/usr/local/apache-maven-3.5.0/bin
+PATH=/usr/local/Cellar/vim/8.0.0617/bin:$PATH
+PATH=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin:$PATH
+#PATH=/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home/bin:$PATH
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+source ~/.profile

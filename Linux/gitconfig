@@ -1,6 +1,6 @@
 [user]
-	name = Junqiao Wang
-	email = junqiao.wang@hulu.com
+	name = junqiao.wjq
+	email = junqiao.wjq@alibaba-inc.com
 [credential]
 	helper = store
 
@@ -47,6 +47,5 @@
     ls = ls-files
     rh = reset --hard
 
-	ecco = !/Users/junqiao.wang/ecco-git/ecco-hooks
 [push]
 	default = simple

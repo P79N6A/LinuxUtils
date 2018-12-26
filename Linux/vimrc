@@ -19,11 +19,11 @@ Plugin 'https://github.com/vim-scripts/mru.vim.git'
 Plugin 'https://github.com/majutsushi/tagbar.git'
 Plugin 'https://github.com/vim-scripts/taglist.vim.git'
 
-Plugin 'https://github.com/scrooloose/syntastic.git'
+"Plugin 'https://github.com/scrooloose/syntastic.git'
 
 Plugin 'https://github.com/easymotion/vim-easymotion.git'
 " 安装完还需要进入到Youcompleteme的目录编译lib文件，参考https://github.com/Valloric/YouCompleteMe
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/Yggdroot/indentLine.git'
 
 Plugin 'https://github.com/tpope/vim-fugitive.git'
@@ -31,15 +31,15 @@ Plugin 'https://github.com/vim-airline/vim-airline.git'
 Plugin 'https://github.com/vim-airline/vim-airline-themes.git'
 
 " html
-Plugin 'https://github.com/mattn/emmet-vim.git'
-Plugin 'https://github.com/gregsexton/MatchTag.git'
+"Plugin 'https://github.com/mattn/emmet-vim.git'
+"Plugin 'https://github.com/gregsexton/MatchTag.git'
 
 " ruby
-Plugin 'https://github.com/vim-ruby/vim-ruby.git'
-Plugin 'https://github.com/tpope/vim-rails.git'
+"Plugin 'https://github.com/vim-ruby/vim-ruby.git'
+"Plugin 'https://github.com/tpope/vim-rails.git'
 
 " scala
-Plugin 'https://github.com/derekwyatt/vim-scala.git'
+"Plugin 'https://github.com/derekwyatt/vim-scala.git'
 
 " git plugin
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
@@ -47,7 +47,7 @@ Plugin 'https://github.com/airblade/vim-gitgutter.git'
 " Python PEP8 syntax checker, Press <F7> to run flake8 on current file. 
 " Plugin 'https://github.com/nvie/vim-flake8.git'  already included in
 " syntastic 
-Plugin 'https://github.com/davidhalter/jedi-vim.git'
+"Plugin 'https://github.com/davidhalter/jedi-vim.git'
 
 " web development
 "Plugin 'https://github.com/Shutnik/jshint2.vim'  " js hint
@@ -91,7 +91,7 @@ set backspace=indent,eol,start "在insert模式下，启用backspace
 set hlsearch            "搜索高亮显示，:/word的搜索
 "--------------indent line相关---------------------------------------------
 "indentLine 颜色设置
-let g:indentLine_color_term = 239    "terminal 中的颜色
+let g:indentLine_color_term = 139    "terminal 中的颜色
 let g:indentLine_color_tty_light = 7 "(default: 4)
 let g:indentLine_color_dark = 1      "(default: 2)
 
@@ -120,6 +120,8 @@ map <C-l> <C-w>l
 
 " Always show the status line !!!!
 set laststatus=2
+
+:nnoremap <Space> :e<CR>
 
 " vimgrep多文件匹配查找命令，非常强大。 ./**/*中的.是当前工作目录的意思，不是打开的这个文件的位置
 map <F3> :execute "vimgrep /" . expand("<cword>") . "/gj ./**/*" <Bar> cw<CR>
@@ -157,14 +159,14 @@ let g:airline#extensions#tagbar#enabled = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501,E225'
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'passive_filetypes': ['java'] }
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_python_checkers=['flake8']
+"let g:syntastic_python_flake8_args='--ignore=E501,E225'
+"let g:syntastic_mode_map = { 'mode': 'active',
+"                           \ 'passive_filetypes': ['java'] }
 
 " YCM max file size 20 mb
 let g:ycm_disable_for_files_larger_than_kb = 20000
@@ -192,3 +194,5 @@ nmap <Leader>j :call GotoJump()<CR>
 " :vertical resize -5 纵向缩小当前window, 5个character的度量
 " :resize +5 默认横向扩大window
 " normal 模式下，{i}gt, 转到第i个tab页，base1.
+
+set cursorline!
